@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}GARG Servicios{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>GARG Servicios Limitada</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/servicios/">Servicios</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GARG Servicios</p>
+    </footer>
+</body>
+</html>
