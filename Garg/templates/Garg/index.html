@@ -1,0 +1,59 @@
+{% extends 'Garg/base.html' %}
+{% load static %}
+
+{% block title %}Inicio - GARG Servicios{% endblock %}
+
+{% block content %}
+<h1>Bienvenido a GARG Servicios Limitada</h1>
+
+<section class="about-us">
+    <h2>Acerca de nosotros</h2>
+    <br>
+    <p>
+        <br>
+        GARG Servicios Limitada es una empresa dedicada a entregar atención médica domiciliaria de calidad en diversas áreas como telemedicina, enfermería, toma de exámenes y atención presencial. Nuestro compromiso es brindar una atención oportuna, profesional y humana, directamente en la comodidad de tu hogar.
+    </p>
+</section>
+
+<div class="video-carousel">
+    <h2>Videos Informativos</h2>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <video src="{% static 'Garg/videos/video1.mp4' %}" controls></video>
+            <video src="{% static 'Garg/videos/video2.mp4' %}" controls></video>
+            <video src="{% static 'Garg/videos/video3.mp4' %}" controls></video>
+            <video src="{% static 'Garg/videos/video4.mp4' %}" controls></video>
+            <video src="{% static 'Garg/videos/video5.mp4' %}" controls></video>
+        </div>
+    </div>
+    <div class="carousel-buttons">
+        <button id="prevBtn">Anterior</button>
+        <button id="nextBtn">Siguiente</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const track = document.querySelector('.carousel-track');
+        const prevButton = document.getElementById('prevBtn');
+        const nextButton = document.getElementById('nextBtn');
+        const videoWidth = 340; // Ajusta según el ancho de tus videos
+        let currentIndex = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                track.style.transform = `translateX(-${currentIndex * videoWidth}px)`;
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            const maxIndex = track.children.length - 1;
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                track.style.transform = `translateX(-${currentIndex * videoWidth}px)`;
+            }
+        });
+    });
+</script>
+{% endblock %}

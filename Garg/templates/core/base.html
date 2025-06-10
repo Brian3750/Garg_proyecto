@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}GARG Servicios{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Íconos de Font Awesome (si los necesitas) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    {% block welcome_message %}{% endblock %}
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="/">GARG Servicios</a></div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/servicios/telemedicina/">Telemedicina</a></li>
+                        <li><a href="/servicios/medicina-presencial/">Medicina (Presencial)</a></li>
+                        <li><a href="/servicios/medicina-mixta/">Medicina (Mixta)</a></li>
+                        <li><a href="/servicios/laboratorio/">Laboratorio</a></li>
+                        <li><a href="/servicios/enfermeria-examenes/">Enfermería (Toma de exámenes)</a></li>
+                        <li><a href="/servicios/enfermeria-sondas/">Enfermería (Cambio de sondas)</a></li>
+                    </ul>
+                </li>
+                <li><a href="/agendamiento/">Agendar Cita</a></li>
+                <li><a href="/login/">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <ul>
+                <li><i class="fas fa-envelope"></i> contacto@gargservicios.cl</li>
+                <li><i class="fab fa-whatsapp"></i> +56 9 1234 5678</li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+            <p>&copy; 2025 GARG Servicios</p>
+        </div>
+    </footer>
+
+</body>
+</html>

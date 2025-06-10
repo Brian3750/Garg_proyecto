@@ -1,0 +1,49 @@
+{% extends 'Garg/base.html' %}
+{% load static %}
+
+{% block title %}Laboratorio - GARG Servicios{% endblock %}
+
+{% block content %}
+<br>
+<h2>Servicio de Laboratorio</h2>
+<br>
+<p>Realizamos una amplia variedad de exámenes de laboratorio con resultados confiables y rápidos.</p>
+
+<ul>
+  <li>Análisis clínicos generales.</li>
+  <li>Exámenes especializados.</li>
+  <li>Entrega rápida de resultados.</li>
+</ul>
+
+<div class="video-carousel">
+  <h2>Laboratorio</h2>
+  <div class="carousel-container">
+    <div class="carousel-track" id="lab-carousel-track">
+      <!-- Video 1 -->
+      <video src="{% static 'Garg/videos/laboratorio1.mp4' %}" controls></video>
+
+      <!-- Video 2 -->
+      <video src="{% static 'Garg/videos/laboratorio2.mp4' %}" controls></video>
+
+      <!-- Imagen -->
+      <img src="{% static 'Garg/img/laboratorio-foto.jpg' %}" alt="Equipo de laboratorio" style="width: 300px; height: 200px; border-radius: 10px;">
+    </div>
+  </div>
+  <div class="carousel-buttons">
+    <button onclick="moveLabCarousel(-1)">Anterior</button>
+    <button onclick="moveLabCarousel(1)">Siguiente</button>
+  </div>
+</div>
+
+<script>
+  let labIndex = 0;
+
+  function moveLabCarousel(direction) {
+    const track = document.getElementById('lab-carousel-track');
+    const items = track.children.length;
+    labIndex = (labIndex + direction + items) % items;
+    const offset = -labIndex * 320; // ancho estimado + separación
+    track.style.transform = `translateX(${offset}px)`;
+  }
+</script>
+{% endblock %}

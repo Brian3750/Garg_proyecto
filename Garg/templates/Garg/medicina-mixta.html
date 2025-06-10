@@ -1,0 +1,52 @@
+{% extends 'Garg/base.html' %}
+{% load static %}
+
+{% block title %}Medicina Mixta - GARG Servicios{% endblock %}
+
+{% block content %}
+<br>
+<h2>Servicio de Medicina Mixta</h2>
+<br>
+<p>Combina la atención presencial y telemedicina para mayor comodidad y flexibilidad.</p>
+
+<ul>
+  <li>Consultas iniciales en línea.</li>
+  <li>Revisiones presenciales cuando sea necesario.</li>
+  <li>Seguimiento continuo vía digital.</li>
+</ul>
+
+<div class="media-carousel">
+    <br>
+    <br>
+  <h2>Doctor encargado </h2>
+  <br>
+    <li>Milton Cedeño</li>
+    <br>
+  <div class="carousel-wrapper">
+    <div class="carousel-slide active" id="slide1">
+      <video controls>
+        <source src="{% static 'Garg/videos/video-medico.mp4' %}" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+    </div>
+   
+  </div>
+
+  <div class="carousel-controls">
+    <button onclick="showSlide(1)">1</button>
+    <button onclick="showSlide(2)">2</button>
+  </div>
+</div>
+
+<script>
+function showSlide(slideNumber) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === slideNumber - 1) {
+            slide.classList.add('active');
+        }
+    });
+}
+</script>
+{% endblock %}

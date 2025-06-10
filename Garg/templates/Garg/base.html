@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}GARG Servicios{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Garg/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="/" class="logo-link">
+                    <img src="{% static 'Garg/img/logo.png' %}" alt="Logo" class="logo-img">
+                    <span class="logo-text"></span>
+                </a>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/servicios/telemedicina/">Telemedicina</a></li>
+                        <li><a href="/servicios/medicina-presencial/">Medicina (Presencial)</a></li>
+                        <li><a href="/servicios/medicina-mixta/">Medicina (Mixta)</a></li>
+                        <li><a href="/servicios/laboratorio/">Laboratorio</a></li>
+                        <li><a href="/servicios/enfermeria-examenes/">Enfermería (Toma de exámenes)</a></li>
+                        <li><a href="/servicios/enfermeria-sondas/">Enfermería (Cambio de sondas)</a></li>
+                    </ul>
+                </li>
+                <li><a href="/agendamiento/">Agendar Cita</a></li>
+                <li><a href="/login/">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <ul>
+                <li><i class="fas fa-envelope"></i> contacto@gargservicios.cl</li>
+                <li><i class="fab fa-whatsapp"></i> +56 9 69078446</li>
+                <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/saludgarg/" target="_blank">Instagram</a></li>
+                <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/cyg.garg.3/?locale=es_LA" target="_blank">Facebook</a></li>
+            </ul>
+            <p>&copy; 2025 GARG Servicios</p>
+        </div>
+    </footer>
+</body>
+</html>

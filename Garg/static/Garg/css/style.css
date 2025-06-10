@@ -1,0 +1,260 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact-info i, .social-links i {
+    margin-right: 5px;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #007BFF;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo-container {
+    background-color: #cceeff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #007BFF;
+    padding: 10px;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.footer-container li {
+    margin-bottom: 5px;
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+/* About section */
+.about-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #e6f2ff;
+    border-radius: 12px;
+}
+
+.about-section h2 {
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Video carousel */
+.video-carousel {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.video-carousel h2 {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.carousel-track video {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.carousel-buttons {
+    margin-top: 10px;
+}
+
+.carousel-buttons button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carousel-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Video section (para páginas individuales como telemedicina.html) */
+.video-section {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #e6f9ff;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.video-section h2 {
+    color: #007BFF;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.video-section p {
+    color: #333;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.video-section video {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #007BFF;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        color: white;
+        font-size: 24px;
+    }
+
+    .carousel-track {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-track video {
+        width: 90%;
+        height: auto;
+    }
+}

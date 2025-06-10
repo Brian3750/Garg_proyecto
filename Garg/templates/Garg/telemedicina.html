@@ -1,0 +1,20 @@
+{% extends 'Garg/base.html' %}
+{% load static %}
+
+{% block title %}Telemedicina - GARG Servicios{% endblock %}
+
+{% block content %}
+<div class="servicio-container">
+    <h1>Telemedicina</h1>
+    <p>
+        Nuestro servicio de telemedicina permite a los pacientes acceder a atención médica desde la comodidad de su hogar, utilizando tecnología de videollamadas seguras y eficientes.
+    </p>
+
+    <div class="video-container">
+        <video controls width="100%" height="auto">
+            <source src="{% static 'Garg/videos/telemedicina.mp4' %}" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+    </div>
+</div>
+{% endblock %}
