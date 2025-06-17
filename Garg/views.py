@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Agendamiento
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
+
+from .models import Agendamiento, Usuario
+from .forms import UsuarioCreationForm  # <-- Asegúrate que este formulario exista
 
 # Formulario de agendamiento
 class AgendamientoForm(forms.ModelForm):
@@ -82,3 +84,15 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('index')
+
+# Vista para crear usuario
+def crear_usuario(request):
+    if request.method == 'POST':
+        form = UsuarioCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Usuario creado correctamente.")
+            return redirect('login')
+    else:
+        form = UsuarioCreationForm()
+    return render(request, 'Garg/crear_usuario.html', {'form': form})

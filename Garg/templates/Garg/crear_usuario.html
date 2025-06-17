@@ -1,0 +1,29 @@
+{% extends 'Garg/base.html' %}
+{% load static %}
+
+{% block title %}Crear Usuario - GARG Servicios{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Crear Nuevo Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+{% endblock %}

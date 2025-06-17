@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     'Garg',
 ]
 
+# Modelo de usuario personalizado
+AUTH_USER_MODEL = 'Garg.Usuario'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -36,7 +39,7 @@ ROOT_URLCONF = 'Proyecto_Garg.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Ruta personalizada para plantillas globales
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,13 +76,13 @@ TIME_ZONE = 'America/Santiago'
 USE_I18N = True
 USE_TZ = True
 
-# Archivos estáticos (CSS, JS, imágenes, videos)
+# Archivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'Garg', 'static'),  # Carpeta de estáticos dentro de tu app
+    os.path.join(BASE_DIR, 'Garg', 'static'),
 ]
 
-# Archivos multimedia (si algún día manejas uploads)
+# Archivos multimedia
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
